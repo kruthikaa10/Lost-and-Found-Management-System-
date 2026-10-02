@@ -1,0 +1,89 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site1.Master.cs"
+    Inherits="LostAndFound.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <title>Lost & Found Management System</title>
+<link href="<%= ResolveUrl("~/CSS/Style.css") %>?v=3" rel="stylesheet" />
+    <style>
+    .menu {
+        background-color: #152b45 !important;
+        text-align: center !important;
+        padding: 15px !important;
+    }
+
+    .menu a {
+        color: white !important;
+        text-decoration: none !important;
+        margin: 0 20px !important;
+        font-size: 17px !important;
+        display: inline-block !important;
+    }
+
+    .menu a:visited {
+        color: white !important;
+    }
+
+    .menu a:hover {
+        color: yellow !important;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h1>LOST & FOUND MANAGEMENT SYSTEM</h1>
+
+        </div>
+
+
+        <div class="menu" style="background-color:#152b45; text-align:center; padding:15px;">
+
+            <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;">Home</asp:HyperLink>
+            <asp:HyperLink ID="lnkLost" runat="server" NavigateUrl="~/LostItems.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;">Lost Items</asp:HyperLink>
+            <asp:HyperLink ID="lnkFound" runat="server" NavigateUrl="~/FoundItems.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;">Found Items</asp:HyperLink>
+            <asp:HyperLink ID="lnkAdminDash" runat="server" NavigateUrl="~/AdminDashboard.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;" Visible="false">Admin Dashboard</asp:HyperLink>
+            <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Login.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;">Login</asp:HyperLink>
+            <asp:HyperLink ID="lnkRegister" runat="server" NavigateUrl="~/Register.aspx" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;">Register</asp:HyperLink>
+            
+            <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" CausesValidation="false" style="color:white; text-decoration:none; margin:0 20px; font-size:17px;" Visible="false">Logout</asp:LinkButton>
+        </div>
+
+
+        <!-- PAGE CONTENT -->
+
+        <div class="container">
+
+            <asp:ContentPlaceHolder
+                ID="MainContent"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <p>
+                © 2026 Lost & Found Management System
+            </p>
+
+        </div>
+
+    </form>
+
+</body>
+</html>
